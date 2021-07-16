@@ -47,6 +47,8 @@ class FindTargetRobot(RobotEmitterReceiverCSV):
         self.motorSpeeds = np.clip(self.motorSpeeds, -4, 4)
 
         # Apply motor speeds
+        self.leftMotor.setPosition(float('inf'))
+        self.rightMotor.setPosition(float('inf'))
         self.leftMotor.setVelocity(self.motorSpeeds[0])
         self.rightMotor.setVelocity(self.motorSpeeds[1])
 
